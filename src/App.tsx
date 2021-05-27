@@ -1,5 +1,5 @@
 import React from 'react'
-import './App.css'
+import './style/App.css'
 import data from './data/page.json'
 import Input from './components/input'
 
