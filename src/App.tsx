@@ -1,13 +1,17 @@
 import React from 'react'
 import './App.css'
+import data from './data/page.json'
+import Input from './components/input'
 
 function App() {
 
   return (
-    <div className="App">
-        <div>
-          <h1>Hello</h1>
-          <p>asd</p>
+    <div>
+        <div className="header">
+          <h1>{data.header}</h1>
+        </div>
+        <div className="form">
+          <Input />
         </div>
     </div>
   )
