@@ -4,10 +4,14 @@ import data from './data.json'
 function Input() {
 
   return (
-   <>
-   <p>{data.form}</p>
-   <input placeholder={data.placeholder}></input>
-   </>
+    <div>
+      <div className="input">
+        <input placeholder={data.placeholder}></input>
+      </div>
+      <div className="button">
+        <button>{data.button}</button>
+      </div>
+    </div>
   )
 }
 

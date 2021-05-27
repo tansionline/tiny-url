@@ -1,4 +1,5 @@
 {
     "form": "Enter Your URL:",
-    "placeholder": "https://github.com"
+    "placeholder": "https://github.com",
+    "button": "Create new URL"
 }

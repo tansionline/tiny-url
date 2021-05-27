@@ -7,12 +7,12 @@ function App() {
 
   return (
     <div>
-        <div className="header">
-          <h1>{data.header}</h1>
-        </div>
-        <div className="form">
-          <Input />
-        </div>
+      <div className="header">
+        <h1>{data.header}</h1>
+      </div>
+      <div>
+        <Input />
+      </div>
     </div>
   )
 }
