@@ -40,12 +40,12 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 2em;
+  margin: 2em 0 6em 0;
 }
 
 .input {  
   display: flex;
-  margin-top: 6em;
+  margin-bottom: 4em;
   align-items: center;
   justify-content: center;
 }
