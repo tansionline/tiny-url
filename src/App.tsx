@@ -1,6 +1,8 @@
 import React from 'react'
 import './style/App.css'
 import data from './data/page.json'
+import axios from 'axios'
+import 'cors'
 
 class App extends React.Component<{}, { value: string }>  {
   constructor(props: any) {
@@ -16,7 +18,16 @@ class App extends React.Component<{}, { value: string }>  {
   }
 
   handleSubmit(event: any) {
-    alert('A name was submitted: ' + this.state.value);
+
+    console.log(this.state.value)
+
+    axios.get(`https://api.1pt.co/addURL?long=${this.state.value}`,)
+      .then((response: any) => {
+        console.log(`https://1pt.co/${response.data.short}`);
+      })
+      .catch(function (error: any) {
+        console.log(error);
+      });
     event.preventDefault();
   }
 
