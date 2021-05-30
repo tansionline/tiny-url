@@ -3,6 +3,7 @@ import axios from 'axios'
 import './style/App.css'
 import data from './data/page.json'
 
+
 class App extends React.Component<{}, { value: string, url: string }>  {
   constructor(props: any) {
     super(props)
@@ -20,7 +21,6 @@ class App extends React.Component<{}, { value: string, url: string }>  {
     axios.get(`https://api.1pt.co/addURL?long=${this.state.value}`,)
       .then((response: any) => {
         this.setState({ url: `https://1pt.co/${response.data.short}` })
-        console.log(this.state.url)
       })
       .catch(function (error: any) {
         console.log(error)
@@ -29,6 +29,11 @@ class App extends React.Component<{}, { value: string, url: string }>  {
   }
 
   render() {
+    const URL = this.state.url
+    let dynamicInput;
+    if (URL !== "") {
+      dynamicInput = <input value={this.state.url} onClick={() => { navigator.clipboard.writeText(this.state.url) }} />;
+    }
     return (
       <div>
         <div className="header">
@@ -39,7 +44,7 @@ class App extends React.Component<{}, { value: string, url: string }>  {
             <input type="text" value={this.state.value} onChange={this.handleChange} placeholder={data.placeholder} />
           </div>
           <div className="input">
-            <input type="text" value={this.state.url} onClick={() => { navigator.clipboard.writeText(this.state.url); alert('Copied') }} />
+            {dynamicInput}
           </div>
           <div className="button">
             <button type="submit">{data.button}</button>
