@@ -1,8 +1,7 @@
 import React from 'react'
 import axios from 'axios'
-import './style/App.css'
 import data from './data/page.json'
-
+import './style/App.css'
 
 class App extends React.Component<{}, { value: string, url: string }>  {
   constructor(props: any) {
